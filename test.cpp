@@ -1,9 +1,10 @@
 #include "server.hpp"
 int main(int argc,char** argv){
-	MySQLServer life_server("222.121.110.229","marker");
+	MySQLServer life_server("lifebest.iptime.org","marker");
 	string command;
 	while(1){
-		command = "replace into info values(1,37.3486,126.678,2021-04,0)";
+		cout<<"type query : ";
+		getline(cin,command);
 		if(!life_server.sendCommand(command)){
 			if(command.substr(0,7) != "replace"){
 				life_server.showResponse();	
